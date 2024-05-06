@@ -1,0 +1,21 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_firebase/features/user_auth/presentation/pages/login_page.dart';
+import 'package:lottie/lottie.dart';
+
+class SplashScreen extends StatelessWidget {
+  final Widget? child;
+  const SplashScreen({super.key, this.child});
+
+  @override
+  Widget build(BuildContext) {
+    return AnimatedSplashScreen(
+        splash: Center(
+          child: Lottie.asset(
+              'flutter_firebase_series/assests/animation/AnimationFile.json'),
+        ),
+        nextScreen: const LoginPage(),
+        duration: 3500,
+        backgroundColor: const Color.fromARGB(255, 174, 229, 255));
+  }
+}
