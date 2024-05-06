@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase/chat_screen.dart';
 import 'package:flutter_firebase/features/user_auth/presentation/widgets/bottom_sheet_header_title.dart';
 import 'package:flutter_firebase/features/user_auth/presentation/widgets/category_grid.dart';
 import 'package:flutter_firebase/features/user_auth/presentation/widgets/date.dart';
@@ -75,9 +76,14 @@ class CategoryPage extends StatelessWidget {
                         //mainAxisSpacing: 10,
                         crossAxisCount: 2,
                         children: [
-                          CategoryGrid(
-                            category: 'Relationship',
-                            color: Colors.purple.shade500,
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ChatScreen()));
+                            },
+                            child: Text('CHAT'),
                           ),
                           CategoryGrid(
                             category: 'Career',
